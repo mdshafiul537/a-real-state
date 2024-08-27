@@ -5,9 +5,11 @@ import { Footer } from "./Layout/Footer";
 
 const Root = () => {
   return (
-    <div className="container">
+    <div className="w-full flex flex-col justify-center items-center">
       <Header />
+      <div className="container h-screen">
       <Outlet></Outlet>
+      </div>
       <Footer />
     </div>
   );

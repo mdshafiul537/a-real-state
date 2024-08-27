@@ -16,3 +16,59 @@ body,
   padding-left: 0px;
   text-align: left;
 }
+
+@font-face {
+  font-family: "Craftwork Grotesk Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Craftwork Grotesk Regular"),
+    url("../public/assets/fonts/CraftworkGrotesk-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Craftwork Grotesk Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Craftwork Grotesk Regular"),
+    url("../public/assets/fonts/CraftworkGroteskGX.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Craftwork Grotesk Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Craftwork Grotesk Medium"),
+    url("../public/assets/fonts/CraftworkGrotesk-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Craftwork Grotesk Semi Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Craftwork Grotesk Semi Bold"),
+    url("../public/assets/fonts/CraftworkGrotesk-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Craftwork Grotesk Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Craftwork Grotesk Bold"),
+    url("../public/assets/fonts/CraftworkGrotesk-Bold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Craftwork Grotesk Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Craftwork Grotesk Heavy"),
+    url("../public/assets/fonts/CraftworkGrotesk-Heavy.woff") format("woff");
+}
+
+@supports (grid-template-rows: masonry) {
+  .grid-masonry {
+    grid-template-rows: masonry;
+    grid-auto-flow: dense;
+    /* align-tracks: stretch; */
+  }
+}
