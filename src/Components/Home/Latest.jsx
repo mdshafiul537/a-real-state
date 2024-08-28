@@ -21,7 +21,7 @@ const Latest = () => {
                 </div>
               </div>
               <div className="w-full min-h-[400px]">
-                <div className="grid grid-cols-4 gap-5 ">
+                <div className="grid grid-cols-3 gap-6 ">
                   {/* Start */}
                   <div className="flex flex-col gap-4">
                     <div className="h-64 w-full">
