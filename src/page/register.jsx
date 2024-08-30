@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import fireBaseApp from "../utility/connection";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { isEmptyOrNull } from "../utility/helper";
 
 export const RegisterPage = () => {
   const [isShow, setIsShow] = useState(false);
 
+  const auth = getAuth(fireBaseApp);
   const {
     register,
     handleSubmit,
@@ -14,11 +18,17 @@ export const RegisterPage = () => {
 
   const onSubmit = (data) => {
     console.log("User Login Data ", data);
+    if (!isEmptyOrNull(data)) {
+      createUserWithEmailAndPassword(auth, data.email, data.password)
+        .then((resp) => {
+          console.log("user Response ", resp);
+        })
+        .catch((error) => {
+          console.log("user registration failed", error);
+        });
+    }
   };
 
-  const onLoginWithGoogle = () => {};
-
-  const onLoginWithGitHub = () => {};
   return (
     <React.Fragment>
       <div
@@ -60,7 +70,7 @@ export const RegisterPage = () => {
                   </label>
 
                   <label className="input input-bordered flex items-center gap-2">
-                  <i className="fa-regular fa-envelope"></i>
+                    <i className="fa-regular fa-envelope"></i>
                     <input
                       type="text"
                       className="grow"
@@ -69,7 +79,7 @@ export const RegisterPage = () => {
                     />
                   </label>
                   <label className="input input-bordered flex items-center gap-2">
-                  <i className="fa-regular fa-image"></i>
+                    <i className="fa-regular fa-image"></i>
                     <input
                       type="text"
                       className="grow"
