@@ -41,7 +41,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <NavLink to={"/"} className="btn btn-ghost text-xl"><i className="fa-brands fa-uikit"></i>U-Estate</NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-2 ">
@@ -53,9 +53,6 @@ const Header = () => {
             </li>
             <li>
               <NavLink to="/agents">Agents</NavLink>
-            </li>
-            <li>
-              <NavLink to="/blog">Blog</NavLink>
             </li>
           </ul>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
+import HotSticker from "../Utils/HotSticker";
 
-const Latest = () => {
+const Latest = ({ properties, ...props }) => {
   return (
     <React.Fragment>
       <div className="w-full flex flex-col space-y-7 min-[600px]:">
@@ -14,332 +15,61 @@ const Latest = () => {
                   </h2>
 
                   <p className="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
-                    This is a section of some simple filler text, also known as
-                    placeholder text. It shares some characteristics of a real
-                    written text.
+                    Recommendations are based on your location and search
+                    activity, such as the homes you've viewed and saved and the
+                    filters you've used. We use this information to bring
+                    similar homes to your attention, so you don't miss out.
                   </p>
                 </div>
               </div>
               <div className="w-full min-h-[400px]">
                 <div className="grid grid-cols-3 gap-6 ">
                   {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/1.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
+                  {properties?.map((item) => {
+                    return (
+                      <div className="flex flex-col gap-4">
+                        <div className="h-64 w-full">
+                          <img
+                            className="h-full rounded-lg"
+                            src={`./images/${item.image}`}
+                            alt=""
+                          />
                         </div>
+                        <div className="flex flex-col gap-3 px-2 ">
+                          <h2 className="text-md py-3">{item?.estate_title}</h2>
 
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
+                          <div className="flex flex-row justify-between items-center">
+                            <span className="text-md font-bold">
+                              <i className="fa-solid fa-bangladeshi-taka-sign"></i>
+                              &nbsp;{item.price}
+                            </span>
+                            <HotSticker isHot={item.isHotSale} />
+                          </div>
 
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End */}
+                          <div className="flex flex-row justify-between items-center text-sm">
+                            <div className="w-2/6 flex flex-col justify-center">
+                              <span className="font-bold">
+                                {item?.bead} Beads
+                              </span>
+                            </div>
 
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/2.jpeg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
+                            <div className="w-2/6 flex flex-col justify-center">
+                              <span className="font-bold">
+                                {item?.baths} Baths
+                              </span>
+                              <span></span>
+                            </div>
 
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
+                            <div className="w-2/6 flex flex-col justify-center">
+                              <span className="font-bold">
+                                {item?.area} sqft
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  {/* End */}
-
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/3.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End */}
-
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/3.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End */}
-
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/1.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End */}
-
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/1.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End */}
-
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/1.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End */}
-
-                  {/* Start */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-64 w-full">
-                      <img
-                        className="h-full rounded-lg"
-                        src="./images/1.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 px-2 ">
-                      <h2 className="text-md py-3">
-                        201 Prague Dr, San Jose, CA 95119
-                      </h2>
-
-                      <div className="flex flex-row justify-between items-center">
-                        <span className="text-md font-bold">$16500000</span>
-                        <span className="text-md font-bold bg-gradient-to-r from-yellow-400  to-red-500 rounded-md px-3 py-1 ">
-                          <i className="text-white fa-solid fa-fire"></i>{" "}
-                          &nbsp;Hot Price
-                        </span>
-                      </div>
-
-                      <div className="flex flex-row justify-between items-center text-sm">
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">4 Beads</span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">3 Baths</span>
-                          <span></span>
-                        </div>
-
-                        <div className="w-2/6 flex flex-col justify-center">
-                          <span className="font-bold">1868 sqft</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    );
+                  })}
                   {/* End */}
                 </div>
               </div>
