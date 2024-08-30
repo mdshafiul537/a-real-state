@@ -4,6 +4,9 @@ import tailwindcss from "tailwindcss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    "process.env": {},
+  },
   css: {
     postcss: {
       plugins: [tailwindcss()],

@@ -1,7 +1,20 @@
 import React, { useState } from "react";
+
 import { useForm } from "react-hook-form";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
+import fireBaseApp from "../utility/connection";
 
 export const LoginPage = () => {
+  const auth = getAuth(fireBaseApp);
+  console.log("Login fireBaseApp ", fireBaseApp);
+  const googleProvider = new GoogleAuthProvider();
+  const gitHubProvider = new GithubAuthProvider();
+
   const [isShow, setIsShow] = useState(false);
 
   const {
@@ -15,9 +28,27 @@ export const LoginPage = () => {
     console.log("User Login Data ", data);
   };
 
-  const onLoginWithGoogle = () => {};
+  const onLoginWithGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((user) => {
+        console.log("User Auth ", user);
+      })
+      .catch((error) => {
+        console.log("Login Google Error, ", error);
+      });
+  };
 
-  const onLoginWithGitHub = () => {};
+  const onLoginWithGitHub = () => {
+    console.log("Login With Github ...");
+
+    signInWithPopup(auth, gitHubProvider)
+      .then((user) => {
+        console.log("Login With Github, ", user);
+      })
+      .catch((error) => {
+        console.log("Login With Github Error ", error);
+      });
+  };
   return (
     <React.Fragment>
       <div

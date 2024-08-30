@@ -56,7 +56,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-3">
           <NavLink className="btn" to="register">
             Register
           </NavLink>

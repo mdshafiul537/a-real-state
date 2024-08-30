@@ -52,6 +52,12 @@ const router = createBrowserRouter([
         element: <UserDetailsPage />,
         loader: () => axios.get(`../assets/books.json`),
       },
+      {
+        path: "/login-success",
+        element: <UserDetailsPage />,
+        loader: () => axios.get(`../assets/books.json`),
+      },
+      
     ],
   },
 ]);
