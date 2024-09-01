@@ -49,6 +49,9 @@ export const RegisterPage = () => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>U-Estate | Register</title>
+      </Helmet>
       <div
         className="w-full min-h-screen "
         style={{

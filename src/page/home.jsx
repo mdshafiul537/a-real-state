@@ -5,6 +5,7 @@ import CstSwiperSlider from "../Components/Utils/CstSwiperSlider";
 import Latest from "../Components/Home/Latest";
 import { useLoaderData } from "react-router-dom";
 import { isEmptyOrNull } from "../utility/helper";
+import { Helmet } from "react-helmet";
 
 const HomePage = () => {
   const [properties, setProperties] = useState([]);
@@ -35,6 +36,9 @@ const HomePage = () => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>U-Estate | Home</title>
+      </Helmet>
       <section className="w-full">
         {/* Start Home Slider */}
         <div className="w-full h-[480px] py-4 my-6 bg-gradient-to-r from-slate-100 to-cyan-100 rounded-md p-5 ">

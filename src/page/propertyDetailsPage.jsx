@@ -64,6 +64,9 @@ const PropertyDetailsPage = () => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>U-Estate | Properties Details</title>
+      </Helmet>
       <div className="w-full min-h-screen flex flex-col my-10">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-8 md:col-span-8 lg:col-span-8 xs:col-span-12 sm:col-span-12">

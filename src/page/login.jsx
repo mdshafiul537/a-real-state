@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/Context/AuthProvider";
 import { isEmptyOrNull } from "../utility/helper";
+import { Helmet } from "react-helmet";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -54,6 +55,9 @@ export const LoginPage = () => {
   };
   return (
     <React.Fragment>
+      <Helmet>
+        <title>U-Estate | Login</title>
+      </Helmet>
       <div
         className="w-full h-screen "
         style={{

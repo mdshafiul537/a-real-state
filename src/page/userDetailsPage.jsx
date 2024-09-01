@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Components/Context/AuthProvider";
 import { isEmptyOrNull } from "../utility/helper";
 import Loading from "../Components/Utils/Loading";
+import { Helmet } from "react-helmet";
 
 const UserDetailsPage = () => {
   const { user, updateUser, isLoading } = useContext(AuthContext);
@@ -29,6 +30,9 @@ const UserDetailsPage = () => {
   }
   return (
     <React.Fragment>
+      <Helmet>
+        <title>U-Estate | User Profile</title>
+      </Helmet>
       <div className="w-full min-h-screen grid grid-cols-12 gap-6">
         <div className="w-full min-h-screen col-span-2"></div>
         <div className="col-span-8">

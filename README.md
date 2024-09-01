@@ -41,9 +41,9 @@
 | sort-by          | 1.2.0   |
 | swiper           | 11.1.10 |
 | yup              | 1.4.0   |
+| react-helmet     | 6.1.0   |
 
 #Live Site
 
 - [U-Estate](https://u-estate.web.app/)
 - [U-Estate-2](https://u-estate.firebaseapp.com/)
-

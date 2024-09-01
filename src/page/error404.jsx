@@ -1,10 +1,14 @@
 import React from "react";
 import Header from "../Components/Layout/Header";
 import Footer from "../Components/Layout/Footer";
+import { Helmet } from "react-helmet";
 
 const Error404Page = () => {
   return (
     <React.Fragment>
+      <Helmet>
+        <title>U-Estate | Not found</title>
+      </Helmet>
       <Header />
       <section>
         <div className="w-full min-h-screen flex justify-center items-center">
