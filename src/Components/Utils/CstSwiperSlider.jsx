@@ -16,17 +16,17 @@ const CstSwiperSlider = ({ slides = [] }) => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        // autoplay={{
-        //   delay: 3500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         loop={true}
         slidesPerView={1}
-        modules={[Pagination, Navigation]} //Autoplay
+        modules={[Pagination, Navigation, Autoplay]} //
         className="mySwiper !h-full w-full"
       >
         {slides?.map((item) => {
@@ -38,13 +38,12 @@ const CstSwiperSlider = ({ slides = [] }) => {
                     <img
                       src={item.image}
                       alt={item?.estate_title}
-                      className="h-full rounded-lg"
+                      className="max-h-[95%] rounded-lg"
                     />
                   </figure>
                 </div>
 
                 <div className="w-4/12 xs:w-full sm:w-full md:w-4/12 xs:h-52 sm:h-52 md:h-[420px] h-[420px] bg-slate-40 p-5 xs:p-2 sm:p-2 border rounded-md border-transparent">
-                  
                   <div className="w-full h-full space-y-4 flex flex-col justify-between ">
                     <div className="">
                       <h2 className="text-2xl py-3 md:py-3 md:text-2xl xs:text-base sm:text-base xs:py-1 xs:font-bold sm:font-bold md:font-semibold sm:py-2">

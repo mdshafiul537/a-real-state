@@ -37,7 +37,7 @@ const HomePage = () => {
     <React.Fragment>
       <section className="w-full">
         {/* Start Home Slider */}
-        <div className="w-full h-[450px] py-4 my-6 bg-gradient-to-r from-slate-100 to-cyan-100 rounded-md p-5 ">
+        <div className="w-full h-[480px] py-4 my-6 bg-gradient-to-r from-slate-100 to-cyan-100 rounded-md p-5 ">
           <CstSwiperSlider slides={slider} />
         </div>
         {/* End Home Slider */}
