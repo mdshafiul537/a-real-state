@@ -7,7 +7,7 @@ const Root = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <Header />
-      <div className="container min-h-screen">
+      <div className="container mx-auto min-h-screen">
         <Outlet></Outlet>
       </div>
       <Footer />

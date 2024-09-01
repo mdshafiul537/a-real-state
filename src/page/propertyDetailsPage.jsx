@@ -66,12 +66,13 @@ const PropertyDetailsPage = () => {
     <React.Fragment>
       <div className="w-full min-h-screen flex flex-col my-10">
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-8">
-            <div className="w-full flex flex-col gap-6">
-              <div className="w-full">
+          <div className="col-span-8 md:col-span-8 lg:col-span-8 xs:col-span-12 sm:col-span-12">
+            <div className="w-full flex flex-col justify-center items-center gap-6 ">
+              <div className="w-full flex flex-col justify-center items-center bg-gray-50 px-3 rounded-lg">
                 <ImageSlider images={images} />
               </div>
-              <div className="flex flex-col gap-4">
+
+              <div className="w-full flex flex-col gap-4 xs:gap-6 sm:gap-6 md:gap-4">
                 <h1 className="text-3xl font-bold">{estate_title}</h1>
                 <h1 className="text-xl font-bold">Segment: {segment_name}</h1>
                 <h4 className="font-bold">
@@ -82,7 +83,7 @@ const PropertyDetailsPage = () => {
                   &nbsp;{price}{" "}
                 </h4>
 
-                <div className="w-1/3 xs:w-full sm:w-full md:w-1/3 flex flex-row xs:flex-col sm:flex-col md:flex-row lg:flex-row">
+                <div className="w-1/3 xs:w-full sm:w-full md:w-1/3 flex flex-row  md:flex-row lg:flex-row">
                   <div className="w-full border-b py-2">
                     <i className="fa-solid fa-bed"></i> <span>{bead}</span>{" "}
                   </div>
@@ -109,7 +110,7 @@ const PropertyDetailsPage = () => {
                     <h4 className="text-3xl font-bold border-b border-cyan-500 py-3 my-4">
                       Amenities
                     </h4>
-                    <div className="grid grid-cols-7 gap-5">
+                    <div className="grid grid-cols-7 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5">
                       {facilities?.map((item) => {
                         return <FacilitiyItemKey itemKey={item} />;
                       })}
@@ -126,7 +127,7 @@ const PropertyDetailsPage = () => {
                         {location}
                       </span>
                     </h4>
-                    <div className="!w-[900px] h-96 mt-5">
+                    <div className="!w-[900px] xs:!w-full sm:!w-full md:!w-[800px] lg:!w-[900px] h-96 mt-5">
                       <UtilLocation position={position} />
                     </div>
                   </div>
@@ -134,8 +135,8 @@ const PropertyDetailsPage = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-4 h-screen relative">
-            <div className=" sticky sm:relative xs:relative md:sticky z-20 top-px-0 right-0">
+          <div className="col-span-4 md:col-span-4 lg:col-span-4 sm:col-span-12 xs:col-span-12 h-screen xs:h-[650px] sm:h-[650px] md:h-screen  relative">
+            <div className=" sticky sm:static xs:static md:sticky z-20 top-px-0 right-0">
               <div className="card glass w-full bg-gradient-to-tl from-cyan-50 to-slate-40 drop-shadow-lg ">
                 <div className="card-body">
                   <h2 className="card-title my-6">Ask about the property</h2>

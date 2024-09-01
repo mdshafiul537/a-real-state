@@ -18,7 +18,7 @@ const Footer = () => {
           luxurious spaces and iconic architecture.
         </p>
       </aside>
-      <nav>
+      <nav className="xs:w-full sm:w-full  flex xs:flex-col sm:flex-col justify-center items-center">
         <h6 className="footer-title">Menu</h6>
         <NavLink to={"/"} className="link link-hover">
           Home
@@ -37,7 +37,7 @@ const Footer = () => {
         </NavLink>
       </nav>
 
-      <nav>
+      <nav className="xs:w-full sm:w-full  flex xs:flex-col sm:flex-col justify-center items-center">
         <h6 className="footer-title">Legal</h6>
         <NavLink className="link link-hover">Terms of use</NavLink>
         <NavLink className="link link-hover">Privacy policy</NavLink>

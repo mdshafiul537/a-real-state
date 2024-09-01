@@ -19,10 +19,10 @@ const ImageSlider = ({ images = [], ...props }) => {
 
   return (
     <React.Fragment>
-      <div className="w-full flex flex-col justify-center items-center gap-4">
-        <div className="w-full min-h-[450px]">
+      <div className="w-full grid grid-cols-1 justify-center items-center gap-4">
+        <div className="w-full min-h-[450px] items-center justify-center">
           {/* Slider Start */}
-          <div className="h-[360px]">
+          <div className="h-[360px] mx-auto">
             <Swiper
               style={{
                 "--swiper-navigation-color": "#fff",
@@ -41,7 +41,9 @@ const ImageSlider = ({ images = [], ...props }) => {
               {images?.map((url) => {
                 return (
                   <SwiperSlide key={url} className="h-[360px]">
-                    <img src={url} />
+                    <div className="w-full flex flex-col justify-center items-center">
+                      <img src={url} />
+                    </div>
                   </SwiperSlide>
                 );
               })}

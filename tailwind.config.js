@@ -7,6 +7,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      container: {
+        width: {
+          xs: `100%`,
+        },
+      },
       screens: {
         xs: { min: "350px", max: "639px" },
       },

@@ -6,7 +6,7 @@ import ProfileInf from "../Utils/ProfileInf";
 
 const Header = () => {
   return (
-    <div className="container ">
+    <div className="container mx-auto">
       <ToastContainer />
       <div className="navbar bg-gradient-to-r from-slate-100 to-cyan-50">
         <div className="navbar-start">
