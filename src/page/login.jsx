@@ -2,12 +2,15 @@ import React, { useContext, useState } from "react";
 
 import { useForm } from "react-hook-form";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/Context/AuthProvider";
+import { isEmptyOrNull } from "../utility/helper";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
+  console.log("Login Location ", location);
   const { loginUserPass, loginWithGoogle, loginWithGitHub } =
     useContext(AuthContext);
 
@@ -22,19 +25,31 @@ export const LoginPage = () => {
 
   const onSubmit = (data) => {
     loginUserPass(data, () => {
-      navigate("/");
+      if (!isEmptyOrNull(location.state)) {
+        navigate(location.state);
+      } else {
+        navigate("/");
+      }
     });
   };
 
   const onLoginWithGoogle = () => {
     loginWithGoogle(() => {
-      navigate("/");
+      if (!isEmptyOrNull(location.state)) {
+        navigate(location.state);
+      } else {
+        navigate("/");
+      }
     });
   };
 
   const onLoginWithGitHub = () => {
     loginWithGitHub(() => {
-      navigate("/");
+      if (!isEmptyOrNull(location.state)) {
+        navigate(location.state);
+      } else {
+        navigate("/");
+      }
     });
   };
   return (
