@@ -33,7 +33,7 @@ const AllProperty = ({ properties = [], ...props }) => {
               >
                 <div className="w-full grid grid-cols-5 gap-3 border-b">
                   <div className="p-3">
-                    <img src={`/images/${property.image}`} />
+                    <img src={property.image} alt={property.estate_title} />
                   </div>
 
                   <div className="flex flex-col gap-2 col-span-3 p-3">

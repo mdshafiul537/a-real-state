@@ -24,7 +24,7 @@ const AllAgent = ({ agents = [], ...props }) => {
               <div className="w-full flex flex-col items-center gap-5 border border-gray-300 p-4">
                 <div className="flex flex-row items-center justify-center gap-5">
                   <div className="w-1/2">
-                    <img src={`/images/${image}`} className="rounded-full" />
+                    <img src={image} className="rounded-full" alt={name} />
                   </div>
                   <div className="w-1/2 text-xl text-center font-semibold">
                     <span>{rating}</span>{" "}

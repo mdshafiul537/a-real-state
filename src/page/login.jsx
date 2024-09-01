@@ -42,7 +42,7 @@ export const LoginPage = () => {
       <div
         className="w-full h-screen "
         style={{
-          backgroundImage: `url(/images/login-bg-3.jpg)`,
+          backgroundImage: `url(https://i.ibb.co/f8tGHvt/login-bg-3.jpg)`,
           backgroundPosition: "center",
           backgroundSize: "contain",
         }}
@@ -51,7 +51,10 @@ export const LoginPage = () => {
           <div className="card card-compact w-96 shadow-xl border-cyan-500 bg-[rgba(0,0,0,.7)] border">
             <div className="card-body">
               <div className=" flex flex-col justify-center items-center">
-                <img src="/images/login.png" className="w-28 h-28 my-10" />
+                <img
+                  src="https://i.ibb.co/vXVSfgm/login.png"
+                  className="w-28 h-28 my-10"
+                />
               </div>
               <div className="py-4">
                 <form

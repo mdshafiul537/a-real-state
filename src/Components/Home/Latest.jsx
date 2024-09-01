@@ -33,8 +33,8 @@ const Latest = ({ properties, ...props }) => {
                           <div className="h-64 w-full">
                             <img
                               className="h-full rounded-lg"
-                              src={`./images/${item.image}`}
-                              alt=""
+                              src={item.image}
+                              alt={item.estate_title}
                             />
                           </div>
                           <div className="flex flex-col gap-3 px-2 ">

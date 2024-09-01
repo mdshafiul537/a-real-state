@@ -5,63 +5,63 @@
       "name": "Fletcher Morse",
       "sold": 209,
       "rating": 5,
-      "image": "agent-1.jpg"
+      "image": "https://i.ibb.co/80FGpJP/agent-1.jpg"
     },
     {
       "id": 2,
       "name": "Matt Laricy",
       "sold": 192,
       "rating": 5,
-      "image": "agent-2.jpg"
+      "image": "https://i.ibb.co/HrCvbtF/agent-2.jpg"
     },
     {
       "id": 3,
       "name": "Patrick Shino",
       "sold": 25,
       "rating": 5,
-      "image": "agent-3.jpg"
+      "image": "https://i.ibb.co/6rw37kd/agent-3.jpg"
     },
     {
       "id": 4,
       "name": "Sam Shaffer",
       "sold": 145,
       "rating": 5,
-      "image": "agent-4.jpg"
+      "image": "https://i.ibb.co/5GQH70G/agent-4.jpg"
     },
     {
       "id": 5,
       "name": "Bari Levine Bruszer",
       "sold": 180,
       "rating": 5,
-      "image": "agent-5.jpg"
+      "image": "https://i.ibb.co/Dk6gWF7/agent-5.jpg"
     },
     {
       "id": 6,
       "name": "Leigh Marcus",
       "sold": 155,
       "rating": 5,
-      "image": "agent-6.jpg"
+      "image": "https://i.ibb.co/GCRmM7S/agent-6.jpg"
     },
     {
       "id": 7,
       "name": "Darrell Scott",
       "sold": 60,
       "rating": 5,
-      "image": "agent-7.jpg"
+      "image": "https://i.ibb.co/KX0JrjD/agent-7.jpg"
     },
     {
       "id": 8,
       "name": "Danny Lewis",
       "sold": 102,
       "rating": 5,
-      "image": "agent-8.jpg"
+      "image": "https://i.ibb.co/T2ktGMC/agent-8.jpg"
     },
     {
       "id": 9,
       "name": "Rafay Qamar",
       "sold": 50,
       "rating": 5,
-      "image": "agent-9.jpg"
+      "image": "https://i.ibb.co/pn0rCg6/agent-9.jpg"
     }
   ]
 }

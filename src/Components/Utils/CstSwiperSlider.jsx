@@ -36,7 +36,7 @@ const CstSwiperSlider = ({ slides = [] }) => {
                 <div className="w-8/12 bg-slate-40 rounded-md border-transparent h-[420px] flex flex-col justify-center items-center">
                   <figure>
                     <img
-                      src={`/images/${item.image}`}
+                      src={item.image}
                       alt={item?.estate_title}
                       className="h-[420px] rounded-lg"
                     />

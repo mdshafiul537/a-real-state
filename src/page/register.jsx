@@ -61,7 +61,7 @@ export const RegisterPage = () => {
           <div className="card card-compact w-96 shadow-xl border-cyan-500 bg-[rgba(0,0,0,.7)] border">
             <div className="card-body">
               <div className=" flex flex-col justify-center items-center gap-4">
-                <img src="/images/login.png" className="w-12 h-12" />
+                <img src="https://i.ibb.co/vXVSfgm/login.png" className="w-12 h-12" />
                 <h2 className="text-white text-xl font-bold"> User Register</h2>
               </div>
               <div className="py-4">

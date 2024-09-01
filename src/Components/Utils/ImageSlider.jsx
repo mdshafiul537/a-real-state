@@ -41,7 +41,7 @@ const ImageSlider = ({ images = [], ...props }) => {
               {images?.map((url) => {
                 return (
                   <SwiperSlide key={url} className="h-[360px]">
-                    <img src={`/images/${url}`} />
+                    <img src={url} />
                   </SwiperSlide>
                 );
               })}
@@ -67,7 +67,7 @@ const ImageSlider = ({ images = [], ...props }) => {
                       key={`thumb-${url}`}
                       className="cursor-pointer"
                     >
-                      <img className="w-26 h-20 my-2" src={`/images/${url}`} />
+                      <img className="w-26 h-20 my-2" src={url} />
                     </SwiperSlide>
                   );
                 })}
