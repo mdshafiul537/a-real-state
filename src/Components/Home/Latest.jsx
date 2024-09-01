@@ -1,5 +1,6 @@
 import React from "react";
 import HotSticker from "../Utils/HotSticker";
+import { NavLink } from "react-router-dom";
 
 const Latest = ({ properties, ...props }) => {
   return (
@@ -27,47 +28,51 @@ const Latest = ({ properties, ...props }) => {
                   {/* Start */}
                   {properties?.map((item) => {
                     return (
-                      <div className="flex flex-col gap-4">
-                        <div className="h-64 w-full">
-                          <img
-                            className="h-full rounded-lg"
-                            src={`./images/${item.image}`}
-                            alt=""
-                          />
-                        </div>
-                        <div className="flex flex-col gap-3 px-2 ">
-                          <h2 className="text-md py-3">{item?.estate_title}</h2>
-
-                          <div className="flex flex-row justify-between items-center">
-                            <span className="text-md font-bold">
-                              <i className="fa-solid fa-bangladeshi-taka-sign"></i>
-                              &nbsp;{item.price}
-                            </span>
-                            <HotSticker isHot={item.isHotSale} />
+                      <NavLink to={`/properties/${item?.id}`}>
+                        <div className="flex flex-col gap-4">
+                          <div className="h-64 w-full">
+                            <img
+                              className="h-full rounded-lg"
+                              src={`./images/${item.image}`}
+                              alt=""
+                            />
                           </div>
+                          <div className="flex flex-col gap-3 px-2 ">
+                            <h2 className="text-md py-3">
+                              {item?.estate_title}
+                            </h2>
 
-                          <div className="flex flex-row justify-between items-center text-sm">
-                            <div className="w-2/6 flex flex-col justify-center">
-                              <span className="font-bold">
-                                {item?.bead} Beads
+                            <div className="flex flex-row justify-between items-center">
+                              <span className="text-md font-bold">
+                                <i className="fa-solid fa-bangladeshi-taka-sign"></i>
+                                &nbsp;{item.price}
                               </span>
+                              <HotSticker isHot={item.isHotSale} />
                             </div>
 
-                            <div className="w-2/6 flex flex-col justify-center">
-                              <span className="font-bold">
-                                {item?.baths} Baths
-                              </span>
-                              <span></span>
-                            </div>
+                            <div className="flex flex-row justify-between items-center text-sm">
+                              <div className="w-2/6 flex flex-col justify-center">
+                                <span className="font-bold">
+                                  {item?.bead} Beads
+                                </span>
+                              </div>
 
-                            <div className="w-2/6 flex flex-col justify-center">
-                              <span className="font-bold">
-                                {item?.area} sqft
-                              </span>
+                              <div className="w-2/6 flex flex-col justify-center">
+                                <span className="font-bold">
+                                  {item?.baths} Baths
+                                </span>
+                                <span></span>
+                              </div>
+
+                              <div className="w-2/6 flex flex-col justify-center">
+                                <span className="font-bold">
+                                  {item?.area} sqft
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </NavLink>
                     );
                   })}
                   {/* End */}

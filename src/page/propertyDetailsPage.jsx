@@ -3,8 +3,9 @@ import ImageSlider from "../Components/Utils/ImageSlider";
 import UtilLocation from "../Components/Utils/UtilLocation";
 import { useForm } from "react-hook-form";
 import { useLoaderData, useParams } from "react-router-dom";
-import { isEmptyOrNull } from "../utility/helper";
+import { isEmptyOrNull, onNotify } from "../utility/helper";
 import FacilitiyItemKey from "../Components/Utils/FacilitiyItemKey";
+import Loading from "../Components/Utils/Loading";
 
 const PropertyDetailsPage = () => {
   const params = useParams();
@@ -12,6 +13,7 @@ const PropertyDetailsPage = () => {
   const propertiesResp = useLoaderData();
 
   const [property, setProperty] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!isEmptyOrNull(propertiesResp.data)) {
@@ -20,6 +22,7 @@ const PropertyDetailsPage = () => {
           (item) => item.id === Number(params.id)
         );
         setProperty(item);
+        setIsLoading(false);
       }
     }
   }, [propertiesResp]);
@@ -32,12 +35,15 @@ const PropertyDetailsPage = () => {
   } = useForm();
 
   const onSubmit = (values) => {
-    // updateProﬁle()
-    console.log("User Update Action, ", values);
+    console.log("values ", values);
+    onNotify("Your Request has been receive. We will contact you soon");
   };
 
   const [isHidden, setIsHidden] = useState(true);
 
+  if (isLoading) {
+    return <Loading isLoading={isLoading} />;
+  }
   const {
     estate_title,
     segment_name,
@@ -55,6 +61,7 @@ const PropertyDetailsPage = () => {
     area,
     floorNo,
   } = property;
+
   return (
     <React.Fragment>
       <div className="w-full min-h-screen flex flex-col my-10">

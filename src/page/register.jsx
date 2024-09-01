@@ -1,31 +1,49 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
-import fireBaseApp from "../utility/connection";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { NavLink, useNavigate } from "react-router-dom";
+
 import { isEmptyOrNull } from "../utility/helper";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthContext } from "../Components/Context/AuthProvider";
 
 export const RegisterPage = () => {
+  const navigate = useNavigate();
   const [isShow, setIsShow] = useState(false);
+  const { createUser } = useContext(AuthContext);
 
-  const auth = getAuth(fireBaseApp);
+  const regx = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.* ).{6,}$/gm;
+
+  const schema = yup
+    .object({
+      name: yup.string().required("Name is required"),
+      email: yup
+        .string()
+        .email("Email is not valid")
+        .required("Email is required"),
+      password: yup
+        .string()
+        .min(6)
+        .matches(regx, {
+          message:
+            "Password Must have an Uppercase, a Lowercase & at least 6 characters",
+        })
+        .required("Password  is required"),
+    })
+    .required("");
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
-    console.log("User Login Data ", data);
-    if (!isEmptyOrNull(data)) {
-      createUserWithEmailAndPassword(auth, data.email, data.password)
-        .then((resp) => {
-          console.log("user Response ", resp);
-        })
-        .catch((error) => {
-          console.log("user registration failed", error);
-        });
+    if (!isEmptyOrNull({ data })) {
+      createUser(data, () => {
+        navigate("/login");
+      });
     }
   };
 
@@ -65,26 +83,31 @@ export const RegisterPage = () => {
                       type="text"
                       className="grow"
                       placeholder="Name"
-                      {...register("name", { required: true })}
+                      {...register("name")}
                     />
                   </label>
-
+                  <p className="text-base text-red-600 font-semibold">
+                    {errors.name?.message}
+                  </p>
                   <label className="input input-bordered flex items-center gap-2">
                     <i className="fa-regular fa-envelope"></i>
                     <input
                       type="text"
                       className="grow"
                       placeholder="Email"
-                      {...register("email", { required: true })}
+                      {...register("email")}
                     />
                   </label>
+                  <p className="text-base text-red-600 font-semibold">
+                    {errors.email?.message}
+                  </p>
                   <label className="input input-bordered flex items-center gap-2">
                     <i className="fa-regular fa-image"></i>
                     <input
                       type="text"
                       className="grow"
                       placeholder="PhotoURL"
-                      {...register("photoURL", { required: true })}
+                      {...register("photoURL")}
                     />
                   </label>
                   <label className="input input-bordered flex items-center gap-2">
@@ -104,7 +127,7 @@ export const RegisterPage = () => {
                       type={isShow ? "text" : "password"}
                       className="grow"
                       placeholder="Password"
-                      {...register("password", { required: true })}
+                      {...register("password")}
                     />
                     {isShow ? (
                       <i
@@ -122,7 +145,9 @@ export const RegisterPage = () => {
                       ></i>
                     )}
                   </label>
-
+                  <p className="text-base text-red-600 font-semibold">
+                    {errors.password?.message}
+                  </p>
                   <label className="input input-bordered flex items-center gap-2 !bg-green-700 text-white font-bold cursor-pointer">
                     <input
                       type="submit"

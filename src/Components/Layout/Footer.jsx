@@ -8,9 +8,14 @@ const Footer = () => {
         <span className="text-2xl">
           <i className="fa-brands fa-uikit"></i>
         </span>
-        <p>
-          U-Estate Group Ltd.
+        <p className="w-1/2 sm:w-full xs:w-full">
+          <span className="py-2 text-lg font-bold">U-Estate Group Ltd.</span>
           <br />
+          U-Estate prioritizes the development of projects with a dual emphasis
+          on reliability and sustainability.
+          <br /> Our dedicated team provides comprehensive Engineering,
+          Procurement and <br /> Construction (EPC) solutions, crafting
+          luxurious spaces and iconic architecture.
         </p>
       </aside>
       <nav>

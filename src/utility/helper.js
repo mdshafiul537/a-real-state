@@ -1,3 +1,5 @@
+import { Bounce, toast } from "react-toastify";
+
 export const isEmptyOrNull = (obj) => {
   if ((obj === undefined && obj === null) || obj === `null`) {
     return true;
@@ -46,4 +48,58 @@ export const getStrDate = (date) => {
   return new Date(date).toDateString();
 };
 
+export const onNotify = (title) => {
+  return toast(title, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+  });
+};
 
+export const onNotifyError = (title) => {
+  return toast.error(title, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+  });
+};
+
+export const onNotifyWarn = (title) => {
+  return toast.warn(title, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+  });
+};
+
+export const onNotifySuccess = (title) => {
+  return toast.success(title, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+  });
+};

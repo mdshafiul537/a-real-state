@@ -12,9 +12,12 @@ import "./index.css";
 import "./style.css";
 
 import router from "./Router/router";
+import ContextWrapper from "./Components/Context/ContextWrapper";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextWrapper>
+      <RouterProvider router={router} />
+    </ContextWrapper>
   </React.StrictMode>
 );

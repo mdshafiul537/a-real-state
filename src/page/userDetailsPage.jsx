@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Components/Context/AuthProvider";
+import { isEmptyOrNull } from "../utility/helper";
+import Loading from "../Components/Utils/Loading";
 
 const UserDetailsPage = () => {
+  const { user, updateUser, isLoading } = useContext(AuthContext);
+  const { displayName, email, photoURL } = user;
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      displayName: user?.displayName,
+      email: user?.email,
+      photoURL: user?.photoURL,
+    },
+  });
 
   const onSubmit = (values) => {
-    // updateProﬁle()
-    console.log("User Update Action, ", values);
+    updateUser(values);
   };
-
+  if (isLoading) {
+    return <Loading isLoading={isLoading} />;
+  }
   return (
     <React.Fragment>
       <div className="w-full min-h-screen grid grid-cols-12 gap-6">
@@ -22,7 +35,6 @@ const UserDetailsPage = () => {
           <div className="card bg-base-100 w-full shadow-xl py-6 border rounded-lg my-6 flex flex-col items-center">
             <div className="w-full p-4">
               <form
-              
                 name="register"
                 className="flex flex-col gap-6 bg-transparent"
                 onSubmit={handleSubmit(onSubmit)}
@@ -40,7 +52,7 @@ const UserDetailsPage = () => {
                     type="text"
                     className="grow"
                     placeholder="Name"
-                    {...register("name", { required: true })}
+                    {...register("displayName", { required: true })}
                   />
                 </label>
 
@@ -79,8 +91,8 @@ const UserDetailsPage = () => {
             <div className="w-40 h-40 ">
               <img
                 className="w-full h-full rounded-full"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
+                src={user?.photoURL}
+                alt={displayName}
               />
             </div>
           </div>

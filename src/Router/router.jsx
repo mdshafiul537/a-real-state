@@ -10,6 +10,7 @@ import { LoginPage } from "../page/login";
 import { RegisterPage } from "../page/register";
 import PropertyDetailsPage from "../page/propertyDetailsPage";
 import UserDetailsPage from "../page/userDetailsPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,12 +30,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/properties/:id",
-        element: <PropertyDetailsPage />,
+        element: (
+          <PrivateRoute>
+            <PropertyDetailsPage />
+          </PrivateRoute>
+        ),
         loader: () => axios.get(`../assets/properties.json`),
       },
       {
         path: "/agents",
-        element: <AgentsPage />,
+        element: (
+          <PrivateRoute>
+            <AgentsPage />
+          </PrivateRoute>
+        ),
         loader: () => axios.get(`../assets/agents.json`),
       },
       {
@@ -48,8 +57,12 @@ const router = createBrowserRouter([
         loader: () => axios.get(`../assets/books.json`),
       },
       {
-        path: "/users/:id",
-        element: <UserDetailsPage />,
+        path: "/users/profile",
+        element: (
+          <PrivateRoute>
+            <UserDetailsPage />
+          </PrivateRoute>
+        ),
         loader: () => axios.get(`../assets/books.json`),
       },
     ],

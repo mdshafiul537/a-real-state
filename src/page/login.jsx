@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { useForm } from "react-hook-form";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  GithubAuthProvider,
-} from "firebase/auth";
-import fireBaseApp from "../utility/connection";
+
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Components/Context/AuthProvider";
 
 export const LoginPage = () => {
-  const auth = getAuth(fireBaseApp);
-  console.log("Login fireBaseApp ", fireBaseApp);
-  const googleProvider = new GoogleAuthProvider();
-  const gitHubProvider = new GithubAuthProvider();
+  const navigate = useNavigate();
+
+  const { loginUserPass, loginWithGoogle, loginWithGitHub } =
+    useContext(AuthContext);
 
   const [isShow, setIsShow] = useState(false);
 
@@ -25,29 +21,21 @@ export const LoginPage = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("User Login Data ", data);
+    loginUserPass(data, () => {
+      navigate("/");
+    });
   };
 
   const onLoginWithGoogle = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((user) => {
-        console.log("User Auth ", user);
-      })
-      .catch((error) => {
-        console.log("Login Google Error, ", error);
-      });
+    loginWithGoogle(() => {
+      navigate("/");
+    });
   };
 
   const onLoginWithGitHub = () => {
-    console.log("Login With Github ...");
-
-    signInWithPopup(auth, gitHubProvider)
-      .then((user) => {
-        console.log("Login With Github, ", user);
-      })
-      .catch((error) => {
-        console.log("Login With Github Error ", error);
-      });
+    loginWithGitHub(() => {
+      navigate("/");
+    });
   };
   return (
     <React.Fragment>

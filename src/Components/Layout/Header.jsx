@@ -1,9 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
+import ProfileInf from "../Utils/ProfileInf";
 
 const Header = () => {
   return (
     <div className="container ">
+      <ToastContainer />
       <div className="navbar bg-gradient-to-r from-slate-100 to-cyan-50">
         <div className="navbar-start">
           <div className="dropdown">
@@ -41,7 +45,9 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <NavLink to={"/"} className="btn btn-ghost text-xl"><i className="fa-brands fa-uikit"></i>U-Estate</NavLink>
+          <NavLink to={"/"} className="btn btn-ghost text-xl">
+            <i className="fa-brands fa-uikit"></i>U-Estate
+          </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-2 ">
@@ -57,12 +63,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <NavLink className="btn" to="register">
-            Register
-          </NavLink>
-          <NavLink className="btn" to="login">
-            Login
-          </NavLink>
+          <ProfileInf />
         </div>
       </div>
     </div>
