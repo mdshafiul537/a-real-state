@@ -11,7 +11,7 @@ const ProfileInf = ({ ...props }) => {
     document.activeElement.blur();
   };
 
-  console.log("User ", user);
+  // console.log("User ", user);
 
   return (
     <React.Fragment>

@@ -10,7 +10,7 @@ export const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log("Login Location ", location);
+  // console.log("Login Location ", location);
   const { loginUserPass, loginWithGoogle, loginWithGitHub } =
     useContext(AuthContext);
 

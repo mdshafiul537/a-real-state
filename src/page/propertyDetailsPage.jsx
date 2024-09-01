@@ -35,7 +35,7 @@ const PropertyDetailsPage = () => {
   } = useForm();
 
   const onSubmit = (values) => {
-    console.log("values ", values);
+    // console.log("values ", values);
     onNotify("Your Request has been receive. We will contact you soon");
   };
 

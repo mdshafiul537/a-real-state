@@ -12,7 +12,7 @@ const HomePage = () => {
 
   const propertiesResp = useLoaderData();
 
-  console.log("propertiesResp, ", propertiesResp);
+  // console.log("propertiesResp, ", propertiesResp);
 
   useEffect(() => {
     if (!isEmptyOrNull(propertiesResp)) {

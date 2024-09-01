@@ -1,7 +1,7 @@
 import { isEmptyOrNull } from "../../utility/helper";
 
 const ShortText = ({ text, size, ...props }) => {
-  console.log("Text size ", size, ", ", text.length);
+  // console.log("Text size ", size, ", ", text.length);
   if (!isEmptyOrNull(text)) {
     if (text.length > size) {
       return (
