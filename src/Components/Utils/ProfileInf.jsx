@@ -44,6 +44,11 @@ const ProfileInf = ({ ...props }) => {
                 Profile
               </NavLink>
             </li>
+            <li>
+              <NavLink to={`/users/profile-update`} className="justify-between">
+                Update Profile
+              </NavLink>
+            </li>
 
             <li>
               <span onClick={onLogOut}>Logout</span>

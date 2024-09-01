@@ -33,56 +33,15 @@ const UserDetailsPage = () => {
         <div className="w-full min-h-screen col-span-2"></div>
         <div className="col-span-8">
           <div className="card bg-base-100 w-full shadow-xl py-6 border rounded-lg my-6 flex flex-col items-center">
-            <div className="w-full p-4">
-              <form
-                name="register"
-                className="flex flex-col gap-6 bg-transparent"
-                onSubmit={handleSubmit(onSubmit)}
-              >
-                <label className="input input-bordered flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    className="h-4 w-4 opacity-70"
-                  >
-                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
-                  </svg>
-                  <input
-                    type="text"
-                    className="grow"
-                    placeholder="Name"
-                    {...register("displayName", { required: true })}
-                  />
-                </label>
-
-                <label className="input input-bordered flex items-center gap-2">
-                  <i className="fa-regular fa-envelope"></i>
-                  <input
-                    type="text"
-                    className="grow"
-                    placeholder="Email"
-                    {...register("email", { required: true })}
-                  />
-                </label>
-                <label className="input input-bordered flex items-center gap-2">
-                  <i className="fa-regular fa-image"></i>
-                  <input
-                    type="text"
-                    className="grow"
-                    placeholder="PhotoURL"
-                    {...register("photoURL", { required: true })}
-                  />
-                </label>
-
-                <label className="input input-bordered flex items-center gap-2 !bg-green-700 text-white font-bold cursor-pointer">
-                  <input
-                    type="submit"
-                    className="grow !bg-green-700 cursor-pointer"
-                    value="Update"
-                  />
-                </label>
-              </form>
+            <div className="w-full p-4 flex flex-col gap-4">
+              <div className="flex flex-row text-lg font-bold gap-3">
+                <span>Name:</span>
+                <span>{displayName}</span>
+              </div>
+              <div className="flex flex-row text-lg font-bold gap-3">
+                <span>Email:</span>
+                <span>{email}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -95,6 +54,7 @@ const UserDetailsPage = () => {
                 alt={displayName}
               />
             </div>
+            <h2>{displayName}</h2>
           </div>
         </div>
       </div>

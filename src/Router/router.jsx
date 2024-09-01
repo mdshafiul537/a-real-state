@@ -11,6 +11,7 @@ import { RegisterPage } from "../page/register";
 import PropertyDetailsPage from "../page/propertyDetailsPage";
 import UserDetailsPage from "../page/userDetailsPage";
 import PrivateRoute from "./PrivateRoute";
+import UserUpdatePage from "../page/userUpdate";
 
 const router = createBrowserRouter([
   {
@@ -49,12 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
-        loader: () => axios.get(`../assets/books.json`),
       },
       {
         path: "/register",
         element: <RegisterPage />,
-        loader: () => axios.get(`../assets/books.json`),
       },
       {
         path: "/users/profile",
@@ -63,7 +62,14 @@ const router = createBrowserRouter([
             <UserDetailsPage />
           </PrivateRoute>
         ),
-        loader: () => axios.get(`../assets/books.json`),
+      },
+      {
+        path: "/users/profile-update",
+        element: (
+          <PrivateRoute>
+            <UserUpdatePage />
+          </PrivateRoute>
+        ),
       },
     ],
   },
